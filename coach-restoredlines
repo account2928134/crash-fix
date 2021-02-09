@@ -5924,6 +5924,7 @@ Response PlayerToTheRescueRosCoach
 Rule PlayerToTheRescueRosCoach
 {
 	criteria ConceptPlayerToTheRescue IsNotCoughing IsCoach IsTalk IsTalkCoach IsWorldTalkCoach
+	
 	Response PlayerToTheRescueRosCoach
 }
 
@@ -5940,7 +5941,8 @@ Response SurvivorTauntResponseCoach
 }
 Rule SurvivorTauntResponseCoach
 {
-	criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsCoach IsTalk IsTalkCoach IsWorldTalkCoach IsNotVersus
+	criteria ConceptPlayerTaunt IsSurvivor IsNotSpeaking IsNotCoughing IsCoach IsTalk IsTalkCoach IsWorldTalkCoach
+	ApplyContext "TalkCoach:1:10"
 	Response SurvivorTauntResponseCoach
 }
 
@@ -12063,7 +12065,8 @@ Rule SurvivorCoughingCoach
 
 Rule SurvivorCoughingDeathCoach
 {
-	criteria ConceptPlayerDeath IsCoughing IsCoach IsTalk IsTalkCoach IsWorldTalkCoach IsNotVersus
+	criteria ConceptPlayerDeath IsCoughing IsCoach IsTalk IsTalkCoach IsWorldTalkCoach
+	ApplyContext "TalkCoach:1:10"
 	Response SurvivorCoughingCoach
 }
 
@@ -12081,7 +12084,8 @@ Response SurvivorDeathCoach
 }
 Rule SurvivorDeathCoach
 {
-	criteria ConceptPlayerDeath IsNotCoughing IsCoach IsTalk IsTalkCoach IsWorldTalkCoach IsNotVersus
+	criteria ConceptPlayerDeath IsNotCoughing IsCoach IsTalk IsTalkCoach IsWorldTalkCoach
+	ApplyContext "TalkCoach:1:10"
 	Response SurvivorDeathCoach
 }
 
